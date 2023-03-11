@@ -23,7 +23,12 @@ const router = createRouter({
       path: '/novo-produto',
       name: 'novoProduto',
       component: () => import('../views/produto/novo.vue')
-    }
+    },
+    {
+      path: '/editar-produto/:id',
+      name: 'EditarProduto',
+      component: () => import('../views/produto/EditarProduto.vue')
+    },
   ]
 })
 

@@ -9,11 +9,13 @@
         <p class="descricao">{{ produto.descricao }}</p>
         <v-list-item-two-line>
           <v-list-item-content>
-            <v-list-item-subtitle>Valor: {{ produto.valor }} | Quantidade: {{ produto.quantidade }}</v-list-item-subtitle>
+            <v-list-item-subtitle>Valor: R$ {{ produto.valor }} | Quantidade: {{ produto.quantidade }}</v-list-item-subtitle>
+
           </v-list-item-content>
 
           <v-list-item-action class="align-self-end">
             <v-btn color="red" class="mb-5 pa-3 mt-4" small @click="excluirProduto(produto.id)">Excluir</v-btn>
+            <v-btn color="orange" class="mb-5 pa-3 mt-4 ms-2 editar-produto" small @click="editarProduto(produto.id)"><v-icon left>mdi-pencil</v-icon>Editar</v-btn>
           </v-list-item-action>
         </v-list-item-two-line>
       </v-card-text>
@@ -61,6 +63,10 @@ export default {
       }).catch(error => {
         console.log(error)
       })
+    },
+
+    editarProduto(id) {
+      this.$router.push(`/editar-produto/${id}`)
     }
   }
 }
