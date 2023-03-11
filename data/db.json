@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nome": "Pizza",
-      "valor": "45",
+      "valor": "43",
       "quantidade": "1",
       "imagem": "https://i2.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/pizza-png2.png?fit=696%2C351&ssl=1",
       "descricao": "pizza G 4 queijos"
@@ -20,7 +20,8 @@
       "nome": "Babata frita",
       "valor": "15",
       "quantidade": "1",
-      "imagem": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Bata-Frita-com-Fundo-Transparente.png"
+      "imagem": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Bata-Frita-com-Fundo-Transparente.png",
+      "descricao": "Batata frita padão 300G"
     },
     {
       "id": 4,
@@ -28,6 +29,33 @@
       "valor": "7.55",
       "quantidade": "1",
       "imagem": "https://midiasbomdemais.s3.sa-east-1.amazonaws.com/2020/05/Refrigerante-Guaran%C3%A1-Antarctica-2l.png"
+    },
+    {
+      "id": 5,
+      "nome": "Pastel",
+      "valor": "7.84",
+      "quantidade": "1",
+      "imagem": "https://www.pastelodair.com.br/wp-content/uploads/2020/07/pastel2.png",
+      "descricao": "Pastel sabor frango com catupiry"
+    }
+  ],
+  "pedido": [
+    {
+      "cliente": {
+        "nome": "",
+        "telefone": "",
+        "endereco": {
+          "logradouro": "",
+          "numero": "",
+          "bairro": "",
+          "complemento": "",
+          "referencia": ""
+        }
+      },
+      "listaProdutos": [],
+      "valorTotal": 0,
+      "formaPagamento": "pix",
+      "produtosSelecionados": []
     }
   ]
 }
