@@ -1,3 +1,25 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Pizza",
+      "valor": "56",
+      "quantidade": "1",
+      "imagem": "https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/pizza-png5.png?resize=696%2C395&ssl=1"
+    },
+    {
+      "id": 2,
+      "nome": "coca cola 600",
+      "valor": "4.6",
+      "quantidade": "1",
+      "imagem": "https://img2.gratispng.com/20180323/sgq/kisspng-coca-cola-fizzy-drinks-diet-coke-coca-cola-5ab4c81f1942f7.0801690715217971511035.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Kit mata fome",
+      "valor": "50",
+      "quantidade": "1",
+      "imagem": "https://mastercombolanches.files.wordpress.com/2020/07/combo-5-png-1.png"
+    }
+  ]
 }

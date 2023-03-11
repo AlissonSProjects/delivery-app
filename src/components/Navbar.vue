@@ -24,8 +24,8 @@ export default {
   .nav-item {
     padding: 15px 20px;
     text-decoration: none;
-    color: #06b306;
-    background: #eafcea;
+    color: #fafafa;
+    background:  #ffbd03;
     margin-left: 20px;
     border-radius: 15px;
   }
