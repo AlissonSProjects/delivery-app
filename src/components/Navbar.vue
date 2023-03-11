@@ -25,7 +25,7 @@ export default {
     padding: 15px 20px;
     text-decoration: none;
     color: #fafafa;
-    background:  #ffbd03;
+    background:  #e0320b;
     margin-left: 20px;
     border-radius: 15px;
   }
