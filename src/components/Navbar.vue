@@ -4,6 +4,8 @@
       <router-link class="nav-item" to="/">Home</router-link>
       <router-link class="nav-item" to="/novo-pedido">Novo pedido</router-link>
       <router-link class="nav-item" to="/lista-produtos">Produtos</router-link>
+      
+      
     </nav>
   </div>
 </template>

@@ -29,16 +29,6 @@
           <v-col cols="12">
             <v-select :items="formaPagamentoList" item-title="titulo" item-value="value" v-model="pedido.formaPagamento" label="Forma pagamento" />
           </v-col>
-          <v-col cols="12">
-            <v-select :items="produtosList" v-model="produtoSelecionado" label="Produto"/>
-          </v-col>
-          <v-col cols="12" md="6">
-            <v-text-field v-model="quantidade" type="number" label="Quantidade"/>
-          </v-col>
-          <v-col cols="12">
-            <v-btn color="green" @click="adicionarProduto">Adicionar Produto</v-btn>
-          </v-col>
-          
         </v-row>
       </v-container>
     </v-form>
@@ -58,14 +48,8 @@
 </template>
 
 <script>
-import axios from 'axios'
 import NavbarVue from '../components/Navbar.vue'
 import Snackbar from '../components/Snackbar.vue'
-import axiosCustomizado from 'axios'
-
-
-
-
 export default {
   components: {
     NavbarVue,
@@ -74,11 +58,19 @@ export default {
   data(){
     return {
       formaPagamentoList: [
-        {titulo: 'Pix', value: 'pix'}, 
-        {titulo: 'Cartão', value: 'cartao'}, 
-        {titulo: 'Dinheiro', value: 'dinheiro'} 
+        {
+          titulo: "Cartão",
+          value: "cartao"
+        },
+        {
+          titulo: "Pix",
+          value: "pix"
+        },
+        {
+          titulo: "Dinheiro",
+          value: "dinheiro"
+        }
       ],
-      
       pedido: {
         cliente: {
           nome: "",
@@ -93,7 +85,7 @@ export default {
         },
         listaProdutos: [],
         valorTotal: 0,
-        formaPagamento: "pix" 
+        formaPagamento: "pix"
       },
       dialog: false,
       snackbar: {
@@ -103,59 +95,31 @@ export default {
     }
   },
   methods: {
-    onlyNumbers(event) { 
+    onlyNumbers(event) {
+      // permite apenas números no campo de número do endereço
       const { value } = event.target;
       event.target.value = value.replace(/\D/g, '');
     },
-    criarPedido() {
-      if( !this.pedido.cliente.nome ||
-          !this.pedido.cliente.telefone ||  
-          !this.pedido.cliente.endereco.logradouro || 
-          !this.pedido.cliente.endereco.numero || 
-          !this.pedido.cliente.endereco.referencia || 
-          !this.pedido.cliente.endereco.bairro || 
-          !this.pedido.formaPagamento ||
-          this.pedido.listaProdutos.length === 0){ 
+    criarPedido(){
+      if(!this.pedido.cliente.nome ||
+      !this.pedido.cliente.endereco.logradouro || 
+      !this.pedido.cliente.endereco.numero || 
+      !this.pedido.cliente.endereco.referencia || 
+      !this.pedido.cliente.endereco.bairro || 
+      !this.pedido.formaPagamento || 
+      !this.pedido.cliente.telefone){
         this.snackbar.ativo = true
         this.dialog = false
         this.snackbar.mensagem = 'Por favor, preencha todos os campos!'
-        setTimeout(() => {
-          this.snackbar.ativo = false;
-        }, 1500);
-        return;
+      }else{
+        // lógica para cadastrar o produto
+        this.dialog = false
+        this.snackbar.ativo = true
+        this.snackbar.mensagem = 'Pedido cadastrado com sucesso!'
       }
-      
-      axios.post('http://localhost:3000/pedidos', this.pedido).then((response) => {
-         console.log(response);
-         this.snackbar.ativo = true
-         this.dialog = false
-         this.snackbar.mensagem = 'Pedido cadastrado com sucesso!'
-         setTimeout(() => {
-           this.snackbar.ativo = false;
-         }, 1500);
-         
-         this.limparPedido();
-      }).catch((error) =>{
-         console.log(error);
-      });
-    },
-    
-    limparPedido() { 
-      this.pedido.cliente.nome = '';
-      this.pedido.cliente.telefone = '';
-      this.pedido.cliente.endereco.logradouro = '';
-      this.pedido.cliente.endereco.numero = '';
-      this.pedido.cliente.endereco.bairro = '';
-      this.pedido.cliente.endereco.complemento = '';
-      this.pedido.cliente.endereco.referencia = '';
-      this.pedido.listaProdutos = [];
-      this.pedido.valorTotal = '';
-      this.produtoSelecionado = '';
-      this.quantidade = '';
     }
   }
 }
-
 </script>
 
 <style>

@@ -13,15 +13,8 @@
       "nome": "Combo mata fome",
       "valor": "56",
       "quantidade": "1",
-      "imagem": "https://mastercombolanches.files.wordpress.com/2020/07/combo-5-png-1.png"
-    },
-    {
-      "id": 3,
-      "nome": "Babata frita",
-      "valor": "15",
-      "quantidade": "1",
-      "imagem": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Bata-Frita-com-Fundo-Transparente.png",
-      "descricao": "Batata frita padão 300G"
+      "imagem": "https://mastercombolanches.files.wordpress.com/2020/07/combo-5-png-1.png",
+      "descricao": "O Kit Mata Fome Lanche é a opção ideal para matar a fome de forma rápida e prática. "
     },
     {
       "id": 4,

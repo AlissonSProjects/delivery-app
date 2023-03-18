@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Carrinho from '../views/produto/Carrinho.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -29,6 +29,13 @@ const router = createRouter({
       name: 'EditarProduto',
       component: () => import('../views/produto/EditarProduto.vue')
     },
+
+    {
+      path: '/carrinho',
+      name: 'Carrinho',
+      component: () => import('../views/produto/Carrinho.vue')
+    },
+
   ]
 })
 
